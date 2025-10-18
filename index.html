@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kanishka Tiwari-Portfolio</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "accent-orange": "#FF7A00",
+                        "accent-green": "#A8FF00",
+                        "accent-purple": "#6A00FF",
+                        "accent-pink": "#FF00A8",
+                        "accent-blue": "#00A3FF",
+                        "accent-yellow": "#FFD700",
+                        "accent-red": "#FF3B30",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "handwriting": ["Kalam", "cursive"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+        @keyframes pulse-glow {
+            0%,
+            100% {
+                box-shadow: 0 0 0 0px #FF7A0080;
+            }
+            50% {
+                box-shadow: 0 0 0 10px #FF7A0000;
+            }
+        }
+        .animate-pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+        .bg-grid {
+            background-image:
+                linear-gradient(to right, #e5e7eb 1px, transparent 1px),
+                linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+.certification-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1.5rem;
+}
+.certification-list li {
+    position: relative;
+    padding: 0.75rem 0.75rem 0.75rem 2.5rem; /* Padding for the custom bullet */
+    margin-bottom: 0.5rem;
+    background-color: #ffffff; /* White background for separation */
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.certification-list li::before {
+    content: '';
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    /* Accent color will be set dynamically via Tailwind classes */
+}
+
+/* Custom CSS for the doodle/sketch look */
+.doodle-frame {
+    /* Using a linear gradient with a slight angle and thickness to mimic a marker drawing */
+    background-image: linear-gradient(145deg, #FFD700, #FF7A00, #FF00A8); 
+    padding: 3px; /* Mimics border thickness */
+}
+.doodle-placeholder {
+    /* White background to make the "doodle" stand out */
+    background-color: white; 
+    /* Placeholder for the doodle content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    color: #6A00FF; /* Purple accent color */
+    font-family: 'Kalam', cursive; /* Handwritten font for the doodle effect */
+    line-height: 1;
+}
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-white font-display text-gray-800">
+<div class="relative min-h-screen w-full">
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-sm">
+<div class="container mx-auto px-4">
+<div class="flex items-center justify-between py-4">
+<h2 class="text-xl font-bold text-gray-900">KANISHKA TIWARI</h2>
+<nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+<a class="text-gray-700 hover:text-accent-orange transition-colors" href="#about">About</a>
+<a class="text-gray-700 hover:text-accent-blue transition-colors" href="#work experience">Work Experience</a>
+
+<a class="text-gray-700 hover:text-accent-green transition-colors" href="#projects">Projects</a>
+<a class="text-gray-700 hover:text-accent-purple transition-colors" href="#education">Education</a>
+<a class="text-gray-700 hover:text-accent-yellow transition-colors" href="#certifications">Certifications</a>
+<a class="text-gray-700 hover:text-accent-red transition-colors" href="#skills">Skills</a>
+<a class="text-gray-700 hover:text-accent-pink transition-colors" href="#contact">Contact</a>
+</nav>
+<button id="menu-button"class="md:hidden p-2 rounded-full text-gray-700 hover:bg-gray-100">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<nav id="mobile-menu" class="hidden md:hidden fixed inset-x-0 top-16 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-40">
+    <div class="flex flex-col p-4 space-y-2 text-sm font-medium">
+        <a class="text-gray-700 hover:text-accent-orange transition-colors py-2" href="#about">About</a>
+        <a class="text-gray-700 hover:text-accent-blue transition-colors py-2" href="#work experience">Work Experience</a>
+        <a class="text-gray-700 hover:text-accent-green transition-colors py-2" href="#projects">Projects</a>
+        <a class="text-gray-700 hover:text-accent-purple transition-colors py-2" href="#education">Education</a>
+        <a class="text-gray-700 hover:text-accent-yellow transition-colors py-2" href="#certifications">Certifications</a>
+        <a class="text-gray-700 hover:text-accent-pink transition-colors py-2" href="#skills">Skills</a>
+        <a class="text-gray-700 hover:text-accent-pink transition-colors py-2" href="#contact">Contact</a>
+    </div>
+</nav>
+
+<main>
+<section class="relative py-20 md:py-32 overflow-hidden">
+<div class="container mx-auto px-4 relative z-10">
+<div class="max-w-3xl text-center mx-auto">
+<div class="relative inline-block">
+<div class="absolute -top-8 -left-8 w-24 h-24 bg-accent-green rounded-full opacity-50 -z-10 transform-gpu rotate-[-15deg]"></div>
+<h1 class="text-5xl md:text-7xl font-black text-gray-900 leading-tight tracking-tight">I build things that are <span class="text-accent-purple">fun</span>, <span class="text-accent-pink">Effervescent</span>, and sometimes <span class="text-accent-orange">moody</span>.</h1>
+<div class="absolute -bottom-8 -right-8 w-20 h-20 bg-accent-blue rounded-lg opacity-50 -z-10 transform-gpu rotate-[25deg]"></div>
+</div>
+<p class="mt-6 text-lg md:text-xl text-gray-600">A creative professional navigating the structured chaos of design.</p>
+<button class="mt-8 px-8 py-4 bg-accent-orange text-white font-bold rounded-full shadow-lg shadow-accent-orange/40 hover:shadow-xl hover:shadow-accent-orange/50 transition-all duration-300 animate-pulse-glow">
+                            Let's Talk
+                        </button>
+</div>
+</div>
+</section>
+<section class="py-16 sm:py-24" id="about">
+<div class="container mx-auto px-4">
+<div class="grid md:grid-cols-5 gap-12 items-center">
+<div class="md:col-span-2 relative">
+<div class="relative aspect-square rounded-full overflow-hidden shadow-2xl transform rotate-[-5deg] transition-transform duration-500 hover:rotate-0 hover:scale-105 doodle-frame">
+<div class="h-full w-full rounded-full bg-cover bg-center" style='background-image: url(/* "https://lh3.googleusercontent.com/aida-public/AB6AXuCOUcSNA45NbXJyyq9LVUFzNmeU8aez0k_TvTsqxUOMpk3RebThlvLja68t-TcBtSQU_dA4r15f6MugQGCPQ2wV-RTqClrqWyspto4go_OEwVDWGrAE5nB2gk9YNdNfDpF-dPAJhBNAyfMZcmX6FF7L5P1g-egw7Q13_B-ewES5OI7whvnNcGkFwjot8bfgPmQVBfJ1psUliAQa_jj84QikrMbdGC-5dtbxMeWO85UVTamO87-F4oWl00ab1DRuM-4CiqslGQECJDT6" */);'><div class="absolute inset-0 flex items-center justify-center bg-white/50 backdrop-blur-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-2/3 h-2/3 text-accent-pink fill-current stroke-accent-pink stroke-2" style="filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.1));">
+            <circle cx="50" cy="30" r="15" fill="none" stroke-width="3" />
+            <path d="M48 45 L52 45 L52 50 L48 50 Z" />
+            <path d="M40 50 Q50 65 60 50" fill="none" stroke-width="3" stroke-linecap="round" transform="rotate(2, 50, 50)" />
+            <line x1="38" y1="52" x2="30" y2="70" stroke-width="2" stroke-linecap="round" class="stroke-accent-green" transform="rotate(10, 38, 52)" />
+            <line x1="62" y1="52" x2="70" y2="70" stroke-width="2" stroke-linecap="round" class="stroke-accent-orange" transform="rotate(-10, 62, 52)" />
+            <circle cx="65" cy="20" r="3" class="fill-accent-yellow" />
+        </svg>
+    </div>
+</div>
+</div>
+<div class="absolute -top-4 -right-4 w-24 h-24 bg-accent-pink rounded-xl transform rotate-[15deg] -z-10"></div>
+<div class="absolute -bottom-4 -left-4 w-20 h-20 bg-accent-green rounded-full -z-10"></div>
+</div>
+<div class="md:col-span-3 relative">
+<div class="absolute -top-8 -left-8 w-64 h-64 bg-accent-purple/10 rounded-full blur-3xl -z-10"></div>
+<h2 class="text-3xl font-bold text-gray-900 mb-4">A Little Bit About Me</h2>
+<p class="font-handwriting text-2xl text-gray-700 leading-relaxed transform -rotate-1">
+                                Hi, I'm Kanishka Tiwari. My work is a playground of structured chaos. I love clean lines as much as I love a splash of wild color. I design to solve problems, but also to inject a little joy into the everyday. My personality? A mix of focused, fun, and a little bit moody. A highly motivated and detail-oriented Computer Science Honours graduate with a strong foundation in software development and a passion for technology, also doing minor in Economics. Seeking to leverage analytical skills and hands-on experience to contribute to a dynamic organization. Eager to learn and grow in a challenging environment by tackling complex problems and building innovative solutions.
+                            </p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-16 sm:py-24" id="work experience">
+<div class="container mx-auto px-4">
+    <h2 class="text-4xl font-black text-center text-accent-blue mb-12">Focused Work, Playful Delivery</h2>
+    <div class="max-w-4xl mx-auto relative">
+        <div class="absolute inset-x-0 inset-y-8 bg-accent-purple/10 rounded-3xl transform rotate-[-1deg] -z-10"></div>
+
+        <div class="relative bg-white p-8 md:p-12 rounded-xl shadow-2xl border-2 border-gray-100 transform rotate-[1deg] transition-transform duration-500 hover:rotate-0">
+            <div class="mb-8">
+                <p class="font-handwriting text-xl text-accent-orange transform -rotate-2 inline-block px-3 py-1 bg-accent-orange/10 rounded-lg mb-2">
+                    March, 2024 – April, 2024
+                </p>
+                <h3 class="text-2xl font-black text-gray-900">Intern</h3>
+                <p class="font-bold text-accent-blue mb-4">Concern on Innovative Radiance Society</p>
+            </div>
+            <ul class="list-none pl-0 space-y-4 text-gray-700">
+                <li class="relative pl-8">
+                    <span class="absolute left-0 top-1 w-4 h-4 rounded-full bg-accent-pink shadow-md animate-pulse-glow"></span>
+                    <span class="font-extrabold text-accent-pink/80">Spearheaded a project on MedTech Startups Evaluation using AI.</span>
+                </li>
+                <li class="relative pl-8">
+                    <span class="absolute left-0 top-1 w-4 h-4 rounded-full bg-accent-blue shadow-md"></span>
+                    Developed and implemented AI models to assess the viability and potential of emerging medical technology startups.
+                </li>
+                <li class="relative pl-8">
+                    <span class="absolute left-0 top-1 w-4 h-4 rounded-full bg-accent-blue shadow-md"></span>
+                    Conducted in-depth market analysis and technology assessment to inform evaluation criteria.
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</section>
+
+<section class="py-16 sm:py-24 bg-grid" id="projects">
+<div class="container mx-auto px-4">
+<h2 class="text-4xl font-bold text-center text-gray-900 mb-12">My Playground</h2>
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-all duration-300 rotate-[-2deg] hover:rotate-0">
+        <div class="aspect-video bg-accent-purple p-4">
+            <div class="bg-white h-full w-full flex items-center justify-center text-center">
+                <p class="font-handwriting text-2xl text-accent-purple">Automation</p>
+            </div>
+        </div>
+        <div class="p-6">
+            <h3 class="text-xl font-black text-gray-900 mb-1">College Subject Allocation System</h3>
+            <p class="text-sm text-gray-700 font-medium">Automated subject allocation process for faculty.</p>
+            <p class="mt-2 text-xs font-bold text-accent-purple/80 px-2 py-1 rounded-full inline-block bg-accent-purple/10">Tech Stack: Excel VBA</p>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-all duration-300 sm:mt-12 rotate-[3deg] hover:rotate-0">
+        <div class="aspect-video bg-accent-green p-4 relative">
+            <span class="absolute top-0 right-0 bg-accent-orange text-white text-xs font-bold px-3 py-1 rounded-bl-lg">🏆 3rd in TechSaksham</span>
+            <div class="bg-white h-full w-full flex items-center justify-center text-center">
+                <p class="font-handwriting text-2xl text-accent-green">Web App</p>
+            </div>
+        </div>
+        <div class="p-6">
+            <div class="flex justify-between items-start">
+                 <h3 class="text-xl font-black text-gray-900 mb-1">Attendance Recorder</h3>
+            </div>
+            <p class="mt-2 text-sm text-gray-700 font-medium">Internet-based attendance app.</p>
+            <p class="mt-2 text-xs font-bold text-accent-green/80 px-2 py-1 rounded-full inline-block bg-accent-green/10">Tech Stack: MERN</p>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-all duration-300 lg:mt-6 rotate-[-1deg] hover:rotate-0">
+        <div class="aspect-video bg-accent-pink p-4">
+            <div class="bg-white h-full w-full flex items-center justify-center text-center">
+                <p class="font-handwriting text-2xl text-accent-pink">This Site!</p>
+            </div>
+        </div>
+        <div class="p-6">
+            <h3 class="text-xl font-black text-gray-900 mb-1">Portfolio Website</h3>
+            <p class="mt-2 text-sm text-gray-700 font-medium">Built using HTML, Tailwind CSS, and JavaScript.</p>
+            <p class="mt-2 text-xs font-bold text-accent-pink/80 px-2 py-1 rounded-full inline-block bg-accent-pink/10">Tech Stack: HTML, Tailwind CSS, JS</p>
+        </div>
+    </div>
+    
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-all duration-300 rotate-[2deg] hover:rotate-0 sm:mt-8 lg:mt-0">
+        <div class="aspect-video bg-accent-blue p-4">
+            <div class="bg-white h-full w-full flex items-center justify-center text-center">
+                <p class="font-handwriting text-2xl text-accent-blue">E-Commerce UI</p>
+            </div>
+        </div>
+        <div class="p-6">
+            <h3 class="text-xl font-black text-gray-900 mb-1">Amazon Clone</h3>
+            <p class="mt-2 text-sm text-gray-700 font-medium">Developed using HTML, Tailwind CSS, and JavaScript.</p>
+            <p class="mt-2 text-xs font-bold text-accent-blue/80 px-2 py-1 rounded-full inline-block bg-accent-blue/10">Tech Stack: HTML, Tailwind CSS, JS</p>
+        </div>
+    </div>
+
+</div>
+</div>
+</section>
+<section class="py-16 sm:py-24" id="education">
+<div class="container mx-auto px-4">
+    <h2 class="text-4xl font-black text-center text-accent-purple mb-12">Educational Adventures</h2>
+    <div class="grid md:grid-cols-3 gap-8 relative max-w-6xl mx-auto">
+        <div class="absolute inset-x-0 inset-y-12 bg-accent-green/10 rounded-full blur-3xl opacity-50 -z-10"></div>
+        
+        <div class="bg-white p-8 rounded-xl shadow-xl border-2 border-accent-purple/20 transform rotate-[-2deg] transition-transform duration-500 hover:rotate-0 hover:scale-105">
+            <div class="text-3xl font-black text-accent-purple mb-2">B.Sc. (Hons.)</div>
+            <p class="text-lg font-bold text-gray-900 mb-1">Computer Science (4-Year Course)</p>
+            <p class="text-base text-gray-700 font-medium"><b>Minor in Economics</b></p>
+            <p class="text-sm text-gray-500 mt-2">Shyama Prasad Mukherjee College of women, University of Delhi</p>
+            <p class="text-sm font-handwriting text-accent-orange mt-1">Started: 2022 | Expected Graduation: 2026</p>
+<p class="text-sm font-semibold text-accent-purple mt-2 border-t border-accent-purple/20 pt-2">Includes Research Work Component</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-xl border-2 border-accent-blue/20 transform rotate-[1deg] transition-transform duration-500 hover:rotate-0 hover:scale-105 md:mt-8">
+            <div class="text-3xl font-black text-accent-blue mb-2">Class 12th</div>
+            <p class="text-lg font-bold text-gray-900 mb-1">CBSE Board</p>
+            <p class="text-base text-gray-700 font-medium">Rajkiya Sarvodaya Kanya Vidhyala</p>
+            <p class="text-sm text-gray-500 mt-2">Completed: 2022</p>
+            <p class="text-sm font-handwriting text-accent-orange mt-1">Achieved: 81.33%</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-xl border-2 border-accent-pink/20 transform rotate-[-1deg] transition-transform duration-500 hover:rotate-0 hover:scale-105">
+            <div class="text-3xl font-black text-accent-pink mb-2">Class 10th</div>
+            <p class="text-lg font-bold text-gray-900 mb-1">CBSE Board</p>
+            <p class="text-base text-gray-700 font-medium">Rajkiya Sarvodaya Kanya Vidhyala</p>
+            <p class="text-sm text-gray-500 mt-2">Completed: 2020</p>
+            <p class="text-sm font-handwriting text-accent-orange mt-1">Achieved: 78%</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<section class="py-16 sm:py-24 bg-gray-50" id="certifications">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-black text-center text-accent-orange mb-12">Certifications & Accolades</h2>
+        <div class="max-w-4xl mx-auto relative">
+            <div class="absolute -inset-2 bg-accent-blue/10 rounded-2xl transform rotate-[2deg] -z-10"></div>
+
+            <ul class="certification-list columns-1 md:columns-2 space-y-4">
+                
+                <li class="relative transform rotate-[-1deg] hover:rotate-0 bg-accent-pink/10 shadow-lg group">
+                    <span class="absolute left-0.75rem top-50p transform -translate-y-50p w-3 h-3 rounded-full bg-accent-pink animate-pulse-glow"></span>
+                    <p class="font-extrabold text-accent-pink/90 pl-4">
+                        🏆 3rd Place Winner in National Virtual Regional Showcase
+                    </p>
+                    <p class="text-sm text-gray-700 font-medium pl-4">TechSaksham — MERN Stack Development</p>
+                </li>
+                
+                <li class="relative transform rotate-[1deg] hover:rotate-0">
+                    <span class="absolute left-0.75rem top-50p transform -translate-y-50p w-3 h-3 rounded-full bg-accent-purple"></span>
+                    <p class="font-semibold text-gray-900 pl-4">TechSaksham — MERN Stack Development course completion</p>
+                </li>
+                
+                <li class="relative transform rotate-[-1deg] hover:rotate-0 md:mt-4">
+                    <span class="absolute left-0.75rem top-50p transform -translate-y-50p w-3 h-3 rounded-full bg-accent-green"></span>
+                    <p class="font-semibold text-gray-900 pl-4">Bharat Intern — Full Stack Development</p>
+                </li>
+                
+                <li class="relative transform rotate-[1deg] hover:rotate-0">
+                    <span class="absolute left-0.75rem top-50p transform -translate-y-50p w-3 h-3 rounded-full bg-accent-orange"></span>
+                    <p class="font-semibold text-gray-900 pl-4">
+                        DevTown — Front-End Web Development (JavaScript, React.js) in collaboration with MLSA KIIT & GDSC KIIT
+                    </p>
+                </li>
+                
+                <li class="relative transform rotate-[-1deg] hover:rotate-0">
+                    <span class="absolute left-0.75rem top-50p transform -translate-y-50p w-3 h-3 rounded-full bg-accent-blue"></span>
+                    <p class="font-semibold text-gray-900 pl-4">Developers Student Clubs — Back-End Web Development (Node.js, Express)</p>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="py-16 sm:py-24" id="skills">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-black text-center text-accent-pink mb-12">Technical Skills</h2>
+        <div class="max-w-4xl mx-auto space-y-8">
+            <div class="bg-accent-orange/10 p-6 md:p-8 rounded-xl shadow-lg transform rotate-[-1deg] hover:rotate-0 transition-transform duration-300">
+                <h3 class="font-black text-accent-orange text-2xl mb-4">Programming & Development</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="bg-accent-orange text-white text-sm font-medium px-4 py-1 rounded-full">C++</span>
+                    <span class="bg-accent-orange/80 text-white text-sm font-medium px-4 py-1 rounded-full">Python</span>
+                    <span class="bg-accent-orange/60 text-white text-sm font-medium px-4 py-1 rounded-full">JavaScript</span>
+                    <span class="bg-accent-orange/50 text-white text-sm font-medium px-4 py-1 rounded-full">HTML</span>
+                    <span class="bg-accent-orange/40 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">CSS</span>
+                    <span class="bg-accent-orange/30 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Django</span>
+                    <span class="bg-accent-orange/20 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">Flutter</span>
+                    <span class="bg-accent-orange/10 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">R</span>
+                    <span class="bg-accent-orange/5 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">DBMS</span>
+                    <span class="bg-accent-orange/5 text-gray-800 text-sm font-medium px-4 py-1 rounded-full">DSA</span>
+                </div>
+            </div>
+
+            <div class="bg-accent-green/20 p-6 md:p-8 rounded-xl shadow-lg transform rotate-[2deg] hover:rotate-0 transition-transform duration-300">
+                <h3 class="font-black text-accent-green text-2xl mb-4">Tools & Platforms</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="bg-accent-green text-gray-900 text-sm font-medium px-4 py-1 rounded-full">Canva</span>
+                    <span class="bg-accent-green/80 text-gray-900 text-sm font-medium px-4 py-1 rounded-full">Digital Marketing Tools</span>
+                </div>
+            </div>
+
+            <div class="bg-accent-purple/10 p-6 md:p-8 rounded-xl shadow-lg transform rotate-[-1deg] hover:rotate-0 transition-transform duration-300">
+                <h3 class="font-black text-accent-purple text-2xl mb-4">Core Strengths</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="bg-accent-purple text-white text-sm font-medium px-4 py-1 rounded-full">Analytical Thinking</span>
+                    <span class="bg-accent-purple/80 text-white text-sm font-medium px-4 py-1 rounded-full">Problem Solving</span>
+                    <span class="bg-accent-purple/60 text-white text-sm font-medium px-4 py-1 rounded-full">Research Skill</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-16 sm:py-24" id="contact">
+<div class="container mx-auto px-4">
+<div class="max-w-xl mx-auto relative">
+    
+    <div class="text-center mb-12">
+        <h2 class="text-4xl font-black text-gray-900 mb-2">Get In Touch</h2>
+        <p class="text-lg text-gray-600">Let's create something brilliant together. </p>
+    </div>
+
+    <div class="relative">
+        <div class="absolute -inset-4 md:-inset-6 bg-accent-pink rounded-xl transform rotate-2 -z-10"></div>
+        <div class="bg-white rounded-xl p-8 shadow-2xl relative z-10">
+            <form action="mailto:kanyshka.025@gmail.com?subject=Portfolio Contact from Kanishka Tiwari's Website" 
+                method="POST"" enctype="text/plain" class="space-y-6">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700" for="name">Name</label>
+                    <input class="mt-1 block w-full bg-white border-gray-300 rounded-lg shadow-sm focus:ring-accent-pink focus:border-accent-pink" id="name" placeholder="Your Name" type="text"/>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700" for="email">Email</label>
+                    <input class="mt-1 block w-full bg-white border-gray-300 rounded-lg shadow-sm focus:ring-accent-pink focus:border-accent-pink" id="email" placeholder="Your Email" type="email"/>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700" for="message">Message</label>
+                    <textarea class="mt-1 block w-full bg-white border-gray-300 rounded-lg shadow-sm focus:ring-accent-pink focus:border-accent-pink" id="message" placeholder="Your Message" rows="4"></textarea>
+                </div>
+                <div class="text-right">
+                    <button class="px-6 py-2 bg-accent-pink text-white font-bold rounded-full shadow-lg hover:bg-accent-pink/90 transition-colors" type="submit">Send It!</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-gray-50 py-12">
+<div class="container mx-auto px-4 text-center">
+<div class="flex justify-center space-x-6 mb-4">
+<a class="text-gray-500 hover:text-accent-orange transition-colors" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"></path></svg>
+</a>
+<a class="text-gray-500 hover:text-accent-pink transition-colors" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path></svg>
+</a>
+<a class="text-gray-500 hover:text-accent-blue transition-colors" href="https://linkedin.com/in/kanishka-tiwari-36221" target="_blank">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path></svg>
+</a>
+</div>
+<p class="text-sm text-gray-500">© 2025 Kanishka Tiwari. All rights reserved.</p>
+</div>
+</footer>
+</div>
+<script>
+    // JavaScript for Mobile Menu Toggle
+    document.getElementById('menu-button').addEventListener('click', function() {
+        var menu = document.getElementById('mobile-menu');
+        if (menu.classList.contains('hidden')) {
+            menu.classList.remove('hidden');
+        } else {
+            menu.classList.add('hidden');
+        }
+    });
+
+    // Close mobile menu when a link is clicked (for smooth scrolling)
+    document.querySelectorAll('#mobile-menu a').forEach(item => {
+        item.addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
+    });
+</script>
+</body></html>
